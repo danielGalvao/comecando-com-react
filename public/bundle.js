@@ -46,12 +46,9 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
+	var GitHub = __webpack_require__(168);
 
-	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  'teste'
-	), document.getElementById('app'));
+	ReactDOM.render(React.createElement(GitHub, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -20345,6 +20342,68 @@
 	var ReactMount = __webpack_require__(160);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	var GitHub = React.createClass({
+	  displayName: "GitHub",
+
+	  handleSubmit: function (e) {
+	    e.preventDefault();
+	    console.log(this.refs.username.value);
+	  },
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "container" },
+	      React.createElement(
+	        "div",
+	        { className: "jumbotron" },
+	        React.createElement(
+	          "h1",
+	          null,
+	          "GitHub Infos"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "row" },
+	          React.createElement(
+	            "form",
+	            { onSubmit: this.handleSubmit },
+	            React.createElement(
+	              "div",
+	              { clasName: "form-group" },
+	              React.createElement(
+	                "label",
+	                null,
+	                "Username"
+	              ),
+	              React.createElement("input", {
+	                type: "text",
+	                ref: "username",
+	                clasName: "form-control",
+	                placeholder: "Ex.: danielGalvao"
+	              })
+	            ),
+	            React.createElement(
+	              "button",
+	              {
+	                type: "submit",
+	                className: "btn btn-primary" },
+	              "Buscar"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = GitHub;
 
 /***/ }
 /******/ ]);
