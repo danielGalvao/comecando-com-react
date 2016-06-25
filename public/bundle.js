@@ -20349,6 +20349,7 @@
 
 	var React = __webpack_require__(1);
 	var SearchUser = __webpack_require__(169);
+	var UserInfo = __webpack_require__(190);
 
 	var GitHub = React.createClass({
 	  displayName: 'GitHub',
@@ -20372,7 +20373,8 @@
 	      React.createElement(SearchUser, {
 	        updateUser: this.updateUser,
 	        updateRepos: this.updateRepos
-	      })
+	      }),
+	      React.createElement(UserInfo, { user: this.state.user })
 	    );
 	  }
 	});
@@ -21673,6 +21675,54 @@
 	  };
 	};
 
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	function UserInfo(props) {
+	  var userInfo = props.user ? React.createElement(
+	    "div",
+	    { className: "row" },
+	    React.createElement(
+	      "div",
+	      { className: "col-lg-4" },
+	      React.createElement("img", { className: "img-circle", src: props.user.avatar_url, alt: "avatar", width: "140", height: "140" }),
+	      React.createElement(
+	        "h2",
+	        null,
+	        props.user.login
+	      ),
+	      React.createElement(
+	        "p",
+	        null,
+	        props.user.name
+	      ),
+	      React.createElement(
+	        "p",
+	        null,
+	        "Followers: ",
+	        props.user.followers,
+	        " / Following: ",
+	        props.user.following
+	      ),
+	      React.createElement(
+	        "p",
+	        null,
+	        React.createElement(
+	          "a",
+	          { className: "btn btn-default", href: props.user.html_url, role: "button" },
+	          "View details"
+	        )
+	      )
+	    )
+	  ) : null;
+
+	  return userInfo;
+	}
+	module.exports = UserInfo;
 
 /***/ }
 /******/ ]);
