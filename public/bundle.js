@@ -20374,7 +20374,10 @@
 	        updateUser: this.updateUser,
 	        updateRepos: this.updateRepos
 	      }),
-	      React.createElement(UserInfo, { user: this.state.user })
+	      React.createElement(UserInfo, {
+	        user: this.state.user,
+	        repos: this.state.repos
+	      })
 	    );
 	  }
 	});
