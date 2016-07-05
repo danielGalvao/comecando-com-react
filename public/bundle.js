@@ -21838,7 +21838,9 @@
 	    this.setState({ reposCount: props.repos.length });
 	  },
 	  render: function render() {
-	    var repos = this.props.repos.map(function (repo, key) {
+	    var repos = this.props.repos;
+
+	    var reposList = this.props.repos.map(function (repo, key) {
 	      return _react2.default.createElement(
 	        "div",
 	        { key: key, className: "thumbnail" },
@@ -21889,7 +21891,7 @@
 	        this.state.reposCount,
 	        " repositories"
 	      ),
-	      repos
+	      reposList
 	    );
 	  }
 	});
