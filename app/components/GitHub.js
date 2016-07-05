@@ -2,7 +2,7 @@ import React from 'react';
 import SearchUser from './SearchUser';
 import UserInfo from './UserInfo';
 
-var GitHub = React.createClass({
+const GitHub = React.createClass({
   getInitialState: function() {
     return {
      user: null,

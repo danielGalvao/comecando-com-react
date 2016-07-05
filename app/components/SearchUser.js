@@ -1,7 +1,7 @@
 import React from 'react';
 import GitHubUser from '../services/GitHubUser';
 
-var SearchUser = React.createClass({
+const SearchUser = React.createClass({
   handleSubmit: function(e){
 
     e.preventDefault();

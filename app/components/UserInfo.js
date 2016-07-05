@@ -2,7 +2,7 @@ import React from 'react';
 import UserRepos from './UserRepos';
 
 function UserInfo({user, repos}) {
-  var userInfo = user ?
+  const userInfo = user ?
     (
       <div className="row">
         <div className="col-lg-4">
