@@ -21755,38 +21755,41 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function UserInfo(props) {
-	  var userInfo = props.user ? _react2.default.createElement(
+	function UserInfo(_ref) {
+	  var user = _ref.user;
+	  var repos = _ref.repos;
+
+	  var userInfo = user ? _react2.default.createElement(
 	    'div',
 	    { className: 'row' },
 	    _react2.default.createElement(
 	      'div',
 	      { className: 'col-lg-4' },
-	      _react2.default.createElement('img', { className: 'img-circle', src: props.user.avatar_url, alt: 'avatar', width: '140', height: '140' }),
+	      _react2.default.createElement('img', { className: 'img-circle', src: user.avatar_url, alt: 'avatar', width: '140', height: '140' }),
 	      _react2.default.createElement(
 	        'h2',
 	        null,
-	        props.user.login
+	        user.login
 	      ),
 	      _react2.default.createElement(
 	        'p',
 	        null,
-	        props.user.name
+	        user.name
 	      ),
 	      _react2.default.createElement(
 	        'p',
 	        null,
 	        'Followers: ',
-	        props.user.followers,
+	        user.followers,
 	        ' / Following: ',
-	        props.user.following
+	        user.following
 	      ),
 	      _react2.default.createElement(
 	        'p',
 	        null,
 	        _react2.default.createElement(
 	          'a',
-	          { className: 'btn btn-default', href: props.user.html_url, role: 'button' },
+	          { className: 'btn btn-default', href: user.html_url, role: 'button' },
 	          'View details'
 	        )
 	      )
@@ -21794,7 +21797,7 @@
 	    _react2.default.createElement(
 	      'div',
 	      { className: 'col-lg-8' },
-	      _react2.default.createElement(_UserRepos2.default, { repos: props.repos })
+	      _react2.default.createElement(_UserRepos2.default, { repos: repos })
 	    )
 	  ) : null;
 
